@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private F1Fragment f1;
@@ -13,11 +14,14 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fmgr;
     private FragmentTransaction tran;
     private boolean isF2;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        title = (TextView)findViewById(R.id.title);
 
         f1 = F1Fragment.newInstance();
         f2 = new F2Fragment();
@@ -37,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         tran.replace(R.id.container, isF2?f2:f1);
         //tran.addToBackStack(null);
         tran.commit();
+    }
+
+    public TextView getMainTitle(){return title;}
+    public F2Fragment getF2(){
+        return f2;
     }
 
 }

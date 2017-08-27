@@ -13,6 +13,8 @@ import android.widget.TextView;
 public class F1Fragment extends Fragment {
     private TextView mesg;
     private View mainView;
+    private MainActivity mainActivity;
+    private TextView mainTitle;
 
     public F1Fragment(){
         Log.i("brad", "F1Fragment()");
@@ -26,6 +28,8 @@ public class F1Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i("brad", "F1Fragment:onCreate()");
+        mainActivity = (MainActivity)getActivity();
+        mainTitle = mainActivity.getMainTitle();
     }
 
     @Override
@@ -48,6 +52,13 @@ public class F1Fragment extends Fragment {
                     f1test2();
                 }
             });
+            final View f1test3 = mainView.findViewById(R.id.f1test3);
+            f1test3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    f1test3();
+                }
+            });
         }
 
         return mainView;
@@ -57,7 +68,13 @@ public class F1Fragment extends Fragment {
         mesg.setText("" + (int)(Math.random()*49+1));
     }
     private void f1test2(){
-        
+        mainTitle.setText("Title Changed");
+    }
+    private void f1test3(){
+        TextView f2mesg = mainActivity.getF2().getF2mesg();
+        if (f2mesg != null){
+            f2mesg.setText("Change by F1");
+        }
     }
 
 
