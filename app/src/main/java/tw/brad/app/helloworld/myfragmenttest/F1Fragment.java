@@ -26,7 +26,7 @@ public class F1Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        Log.i("brad", "F1Fragment:onCreateView()");
         return inflater.inflate(R.layout.fragment_f1, container, false);
     }
 
