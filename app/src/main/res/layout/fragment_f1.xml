@@ -7,20 +7,26 @@
     <TextView
         android:id="@+id/f1mesg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
         android:text="I am F1" />
     <Button
         android:id="@+id/f1test1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="F1Test1"
-        android:onClick="f1test1"
         />
     <Button
         android:id="@+id/f1test2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="F1Test2"
+        />
+    <Button
+        android:id="@+id/f1test3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="F1Test3"
         />
 
 </LinearLayout>
